@@ -1,2 +1,2 @@
-# nejsatan
-NEJ SATAN
+# yes satan
+yes satan :)
