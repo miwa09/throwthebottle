@@ -5,7 +5,7 @@ using UnityEngine;
 public class BoxReseter : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Ball")) {
+        if (other.CompareTag("throwable")) {
             other.GetComponent<TestThrow>().ResetBall();
         }
     }
