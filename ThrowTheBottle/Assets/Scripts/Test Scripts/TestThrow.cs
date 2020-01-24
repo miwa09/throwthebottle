@@ -6,7 +6,9 @@ public class TestThrow : MonoBehaviour
 {
     Rigidbody rig;
     public Vector3 direction;
-    public float speed;
+    public float distanceMultiplier;
+    public float vertMultiplier;
+    public float horMultiplier;
     Vector3 startPos;
     Quaternion startRot;
     public bool PCTest = false;
@@ -30,7 +32,7 @@ public class TestThrow : MonoBehaviour
 
     void KeyboardTest() {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            rig.AddForce(direction * speed, ForceMode.Impulse);
+            rig.AddForce(new Vector3(direction.x * distanceMultiplier, direction.y * vertMultiplier, direction.z * horMultiplier), ForceMode.Impulse);
         }
         if (Input.GetKeyDown(KeyCode.R)) {
             rig.velocity = Vector3.zero;
@@ -51,12 +53,19 @@ public class TestThrow : MonoBehaviour
             if (Input.touches[0].phase == TouchPhase.Ended) {
                 TouchAddForce(touchPosChange);
                 doOnce = true;
-                this.enabled = false;
+                //this.enabled = false;
             }
         } else return;
     }
 
     void TouchAddForce(Vector3 force) {
-        rig.AddForce(new Vector3(force.y * speed, force.y * speed, -force.x), ForceMode.Impulse);
+        rig.AddForce(new Vector3(force.y * distanceMultiplier, force.y * vertMultiplier, -force.x * horMultiplier), ForceMode.Impulse);
+    }
+
+    public void ResetBall() {
+        rig.velocity = Vector3.zero;
+        rig.angularVelocity = Vector3.zero;
+        rig.position = startPos;
+        rig.rotation = startRot;
     }
 }
