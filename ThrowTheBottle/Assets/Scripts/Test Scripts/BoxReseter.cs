@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class BoxReseter : MonoBehaviour
 {
+    public BallSpawner spawn;
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("throwable")) {
-            other.GetComponent<TestThrow>().ResetBall();
+            Destroy(other.gameObject);
+            spawn.SpawnBall();
         }
     }
 }
