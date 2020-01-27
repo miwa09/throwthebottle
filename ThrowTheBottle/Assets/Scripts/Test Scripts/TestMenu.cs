@@ -31,6 +31,11 @@ public class TestMenu : MonoBehaviour
         menuButton.enabled = true;
     }
 
+    public void GameRestart() {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void MainMenuConfirmation() {
         foreach (Button obj in popupDisableList) {
             obj.enabled = false;

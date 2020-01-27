@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 4, y: 4, z: 0}
-  distanceMultiplier: 0.4
+  distanceMultiplier: 0.2
   vertMultiplier: 0.2
   horMultiplier: 0.1
   maxHorizontal: 20

@@ -19,6 +19,7 @@ public class TestThrow : MonoBehaviour
     bool doOnce = true;
     Vector2 touchLastPos;
     public Text test;
+    float height;
 
     void Start()
     {
@@ -60,7 +61,7 @@ public class TestThrow : MonoBehaviour
             }
             touchPosChange = Input.touches[0].position - touchLastPos;
             touchPosChange.x = Mathf.Clamp(touchPosChange.x, -maxHorizontal, maxHorizontal);
-            touchPosChange.y = Mathf.Clamp(touchPosChange.y, 0, maxVertical);
+            height = Mathf.Clamp(touchPosChange.y, 0, maxVertical);
             touchLastPos = Input.touches[0].position;
             if (touchPosChange.y >= maxVertical) {
                 TouchAddForce(touchPosChange);
@@ -79,7 +80,7 @@ public class TestThrow : MonoBehaviour
     }
 
     void TouchAddForce(Vector3 force) {
-        rig.AddForce(new Vector3(force.y * distanceMultiplier, force.y * vertMultiplier, -force.x * horMultiplier), ForceMode.Impulse);
+        rig.AddForce(new Vector3(force.y * distanceMultiplier, height * vertMultiplier, -force.x * horMultiplier), ForceMode.Impulse);
     }
 
     //public void ResetBall() {
