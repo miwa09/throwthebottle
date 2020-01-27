@@ -30,7 +30,9 @@ public class TestThrow : MonoBehaviour
 
     void Update()
     {
-        test.text = "" + touchPosChange.x + "," + touchPosChange.y;
+        if (test != null) {
+            test.text = "" + touchPosChange.x + "," + touchPosChange.y;
+        }
         GetTouchVelocity();
         if (PCTest) {
             KeyboardTest();
