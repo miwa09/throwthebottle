@@ -332,7 +332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1041025377
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -891,85 +891,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameSystems
       objectReference: {fileID: 0}
-    - target: {fileID: 756818698606958553, guid: 9e1f407169ee78649acbf02afa463d00,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 756818698606958555, guid: 9e1f407169ee78649acbf02afa463d00,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -125
-      objectReference: {fileID: 0}
     - target: {fileID: 756818698606958555, guid: 9e1f407169ee78649acbf02afa463d00,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 2000
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 756818698606958555, guid: 9e1f407169ee78649acbf02afa463d00,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 756818699043796152, guid: 9e1f407169ee78649acbf02afa463d00,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 756818699043796152, guid: 9e1f407169ee78649acbf02afa463d00,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 756818699043796152, guid: 9e1f407169ee78649acbf02afa463d00,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 756818699043796152, guid: 9e1f407169ee78649acbf02afa463d00,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -550
-      objectReference: {fileID: 0}
-    - target: {fileID: 756818699043796152, guid: 9e1f407169ee78649acbf02afa463d00,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 756818699043796152, guid: 9e1f407169ee78649acbf02afa463d00,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 756818699043796167, guid: 9e1f407169ee78649acbf02afa463d00,
-        type: 3}
-      propertyPath: m_Text
-      value: Press anywhere to resume
-      objectReference: {fileID: 0}
-    - target: {fileID: 756818699043796167, guid: 9e1f407169ee78649acbf02afa463d00,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 756818699043796167, guid: 9e1f407169ee78649acbf02afa463d00,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 756818699043796167, guid: 9e1f407169ee78649acbf02afa463d00,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 756818699043796167, guid: 9e1f407169ee78649acbf02afa463d00,
-        type: 3}
-      propertyPath: m_FontData.m_FontStyle
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 756818699043796167, guid: 9e1f407169ee78649acbf02afa463d00,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 42
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 756818699702924471, guid: 9e1f407169ee78649acbf02afa463d00,
         type: 3}
