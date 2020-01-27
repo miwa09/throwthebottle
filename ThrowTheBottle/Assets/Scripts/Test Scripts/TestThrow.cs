@@ -18,6 +18,7 @@ public class TestThrow : MonoBehaviour
     public bool PCTest = false;
     bool doOnce = true;
     Vector2 touchLastPos;
+    public Text test;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class TestThrow : MonoBehaviour
 
     void Update()
     {
-        //test.text = "" + touchPosChange.x + "," + touchPosChange.y;
+        test.text = "" + touchPosChange.x + "," + touchPosChange.y;
         GetTouchVelocity();
         if (PCTest) {
             KeyboardTest();
@@ -66,6 +67,9 @@ public class TestThrow : MonoBehaviour
             }
             if (Input.touches[0].phase == TouchPhase.Ended) {
                 TouchAddForce(touchPosChange);
+                if (touchPosChange.magnitude < 1) {
+                    return;
+                }
                 this.enabled = false;
                 return;
             }
