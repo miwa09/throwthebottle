@@ -59,4 +59,13 @@ public class TestMenu : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(scene);
     }
+
+    public void Exit() {
+        if (UnityEditor.EditorApplication.isPlaying) {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+        else {
+            Application.Quit();
+        }
+    }
 }

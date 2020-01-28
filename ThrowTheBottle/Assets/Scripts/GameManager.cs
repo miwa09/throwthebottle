@@ -5,15 +5,17 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    //In-Game Timer
+    public GameObject levelCompleteUI;
     public Text timerUI; //Get the UI element
     int seconds = 0; //Making the timer work like it's supposed to
     int minutes = 0;
     float clock;
-    
-    void Update()
-    {
-        Clock();
+    bool paused = false;
+
+    void Update() {
+        if (!paused) {
+            Clock();
+        }
     }
 
     void Clock() {
@@ -28,6 +30,12 @@ public class GameManager : MonoBehaviour
         }
         if (seconds < 10) {
             timerUI.text = "" + minutes + ":0" + seconds;
-        } else timerUI.text = "" + minutes + ":" + seconds;
+        }
+        else timerUI.text = "" + minutes + ":" + seconds;
+    }
+
+    public void LevelComplete() {
+        paused = true;
+        levelCompleteUI.SetActive(true);
     }
 }
