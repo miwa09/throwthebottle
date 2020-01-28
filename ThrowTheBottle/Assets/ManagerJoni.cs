@@ -5,8 +5,9 @@ using UnityEngine;
 public class ManagerJoni : MonoBehaviour
 {
     public GameObject levelCompleteUI;
+
     public void LevelComplete() {
-        levelCompleteUI.SetActive(true);
-        Debug.Log("voitit pelin");
+            levelCompleteUI.SetActive(true);
+        //Debug.Log("voitit pelin");
     }
 }

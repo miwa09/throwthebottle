@@ -706,6 +706,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 812291237, guid: 36e40b1e4f40a834380aefb4f5de2d13, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3048652907272594688, guid: 36e40b1e4f40a834380aefb4f5de2d13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1098,7 +1102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1191,6 +1195,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameSystems 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904007815359479255, guid: c6fd58cdf38cc0b49b83aa134a3d399e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6fd58cdf38cc0b49b83aa134a3d399e, type: 3}
@@ -1374,7 +1383,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!1 &2090074143
 GameObject:

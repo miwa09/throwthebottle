@@ -10,7 +10,7 @@ public class GoalTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "throwable") {
-            manager.Invoke("LevelComplete", 1);
+            manager.Invoke("LevelComplete", 0.5f);
         }
     }
 }
