@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GoalTrigger : MonoBehaviour
 {
-    ManagerJoni manager;
+    GameManager manager;
     private void Start() {
-        manager = FindObjectOfType<ManagerJoni>();
+        manager = FindObjectOfType<GameManager>();
     }
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "throwable") {

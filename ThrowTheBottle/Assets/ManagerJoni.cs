@@ -37,6 +37,5 @@ public class ManagerJoni : MonoBehaviour
     public void LevelComplete() {
         paused = true;
         levelCompleteUI.SetActive(true);
-        //Debug.Log("voitit pelin");
     }
 }
