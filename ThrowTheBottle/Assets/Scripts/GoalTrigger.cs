@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class GoalTrigger : MonoBehaviour
 {
+    GameManager manager;
+    private void Start() {
+        manager = FindObjectOfType<GameManager>();
+    }
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "throwable") {
-            Debug.Log("voitit pelin :)");
+            manager.Invoke("LevelComplete", 0.5f);
         }
     }
 }
