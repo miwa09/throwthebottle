@@ -61,11 +61,11 @@ public class TestMenu : MonoBehaviour
     }
 
     public void Exit() {
-        if (UnityEditor.EditorApplication.isPlaying) {
-            UnityEditor.EditorApplication.isPlaying = false;
-        }
-        else {
+        //if (UnityEditor.EditorApplication.isPlaying) {
+        //    UnityEditor.EditorApplication.isPlaying = false;
+        //}
+        //else {
             Application.Quit();
-        }
+        //}
     }
 }
