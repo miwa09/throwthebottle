@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 853259846}
-  explosionTime: 0.8
+  explosionTime: 0.5
 --- !u!1001 &1291547052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -623,7 +623,7 @@ PrefabInstance:
     - target: {fileID: 4374722496206710388, guid: f7d89ebf3cd8b4d448d5fff264767f1c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.07
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4374722496206710388, guid: f7d89ebf3cd8b4d448d5fff264767f1c,
         type: 3}
