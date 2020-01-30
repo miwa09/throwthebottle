@@ -713,9 +713,11 @@ GameObject:
   - component: {fileID: 756818698214430717}
   - component: {fileID: 756818698214430718}
   - component: {fileID: 756818698214430716}
+  - component: {fileID: 4528408503332934009}
+  - component: {fileID: 222938659743676115}
   m_Layer: 0
   m_Name: GameSystems
-  m_TagString: Untagged
+  m_TagString: GameLogic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -768,7 +770,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ddd98688d6e3284f909e1ffa1f442df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelCompleteUI: {fileID: 0}
   timerUI: {fileID: 756818699284126706}
+--- !u!114 &4528408503332934009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756818698214430719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a33d003ae6662764baa4749d4b2119d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parTime: 0
+  hitsToWin: 5
+  score: 0
+  scorePerHit: 1000
+--- !u!114 &222938659743676115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756818698214430719}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18734323e91eca74782560777afac9ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &756818698335446426
 GameObject:
   m_ObjectHideFlags: 0
