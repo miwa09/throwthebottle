@@ -11,11 +11,11 @@ public class GameManager : MonoBehaviour
     int minutes = 0;
     float clock;
     bool paused = false;
+    float lastTimescale = 1;
+    public bool chaos = false;
 
     void Update() {
-        if (!paused) {
-            Clock();
-        }
+        Clock();
     }
 
     void Clock() {
@@ -35,7 +35,16 @@ public class GameManager : MonoBehaviour
     }
 
     public void LevelComplete() {
-        paused = true;
+        Pause();
         levelCompleteUI.SetActive(true);
+    }
+
+    public void Pause() {
+        lastTimescale = Time.timeScale;
+        Time.timeScale = 0;
+    }
+
+    public void Resume() {
+        Time.timeScale = lastTimescale;
     }
 }
