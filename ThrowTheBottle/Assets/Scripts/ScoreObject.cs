@@ -14,7 +14,7 @@ public class ScoreObject : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("throwable")) {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Throwable")) {
             if (!chaos) {
                 gm.GetComponent<NormalMode>().AddScore(score);
             } else gm.GetComponent<ChaosMode>().AddScore(score);
