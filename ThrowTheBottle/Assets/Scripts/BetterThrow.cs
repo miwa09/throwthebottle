@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BetterThrow : MonoBehaviour
 {
-    public int framesToRemember = 6;
+    //public int framesToRemember = 6;
     List<Vector3> touchDelta = new List<Vector3>();
     Vector3 throwForce;
     Rigidbody rig;
@@ -27,6 +27,8 @@ public class BetterThrow : MonoBehaviour
     {
         if (thrown) {
             if (transform.position != lastPosition) {
+                GameObject.FindGameObjectWithTag("spawner").GetComponent<ISpawner>().Spawn();
+                GetComponent<ThrowableSensor>().enabled = true;
                 this.enabled = false;
             } else thrown = false;
         }
@@ -40,12 +42,12 @@ public class BetterThrow : MonoBehaviour
         SoftReset();
         if (Input.touchCount > 0) {
             if (Input.touches[0].phase == TouchPhase.Ended) {
+                lastPosition = transform.position;
                 Throw(CalculateForce(throwForce));
                 framesCounted = 0;
                 throwForce = Vector3.zero;
                 touchDelta.Clear();
                 thrown = true;
-                lastPosition = transform.position;
             }
         }
     }

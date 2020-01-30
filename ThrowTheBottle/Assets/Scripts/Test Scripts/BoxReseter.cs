@@ -8,7 +8,7 @@ public class BoxReseter : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("throwable")) {
             Destroy(other.gameObject);
-            spawn.SpawnBall();
+            spawn.Spawn();
         }
     }
 }
