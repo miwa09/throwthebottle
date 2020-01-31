@@ -5,13 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: ab87e2f0f290da744b022325439ab6c0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lauran audiovisuaali.unity
     guid: 2ce6b4c9f182755428d2c927e01cd6ec
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Thanks.unity
     guid: a5d9a3457154bfe4592988dad8fdc582
+  - enabled: 1
+    path: Assets/Scenes/KiminGraffaTestit.unity
+    guid: 4115eaab0a1e60b49aeec58a4d1e7097
   m_configObjects: {}
