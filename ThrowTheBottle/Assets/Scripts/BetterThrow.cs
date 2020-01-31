@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BetterThrow : MonoBehaviour
 {
@@ -17,32 +18,38 @@ public class BetterThrow : MonoBehaviour
     public float forwardMax = 20;
     public float verticalMax = 10;
     public float horizontalMax = 8;
-    bool thrown = false;
+    public bool thrown = false;
     Vector3 lastPosition;
+    bool canThrow = false;
 
     private void Start() {
         rig = GetComponent<Rigidbody>();
     }
     void Update()
     {
-        if (thrown) {
-            if (transform.position != lastPosition) {
-                GameObject.FindGameObjectWithTag("spawner").GetComponent<ISpawner>().Spawn();
-                GetComponent<ThrowableSensor>().enabled = true;
-                this.enabled = false;
-            } else thrown = false;
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            LeaveSpawn();
         }
-        if (Input.touchCount > 0 && !thrown) {
+        if (canThrow && !thrown) {
+            DragAlong();
+        }
+        if (Input.touchCount > 0 && canThrow && !thrown) {
             touchDelta.Add(Input.touches[0].deltaPosition);
             framesCounted++;
         }
     }
 
     private void LateUpdate() {
-        SoftReset();
-        if (Input.touchCount > 0) {
+        //SoftReset();
+        if (Input.touchCount > 0 && canThrow && !thrown) {
             if (Input.touches[0].phase == TouchPhase.Ended) {
+                rig.isKinematic = false;
                 lastPosition = transform.position;
+                int i = 0;
+                while (i < touchDelta.Count) {
+                    throwForce += touchDelta[i];
+                    i++;
+                }
                 Throw(CalculateForce(throwForce));
                 framesCounted = 0;
                 throwForce = Vector3.zero;
@@ -52,16 +59,25 @@ public class BetterThrow : MonoBehaviour
         }
     }
 
+    void DragAlong() {
+        if (Input.touchCount > 0) {
+            rig.isKinematic = true;
+            Touch touch = Input.GetTouch(0);
+            Vector3 touchedPos = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 1.75f));
+            rig.position = touchedPos;
+        }
+    }
+
     void SoftReset() {
-        if (framesCounted > 1) {
-            if ((touchDelta[framesCounted] + touchDelta[framesCounted - 1]).magnitude < softResetDeadzone) {
+        if (touchDelta.Count > 6) {
+            if ((touchDelta[framesCounted] + touchDelta[framesCounted - 5]).magnitude < softResetDeadzone) {
                 touchDelta.Clear();
             }
         }
     }
 
     void Throw(Vector3 force) {
-        rig.AddForce(force, ForceMode.Impulse);
+        rig.AddForce(force, ForceMode.VelocityChange);
     }
 
     Vector3 CalculateForce(Vector3 force) {
@@ -73,6 +89,18 @@ public class BetterThrow : MonoBehaviour
             vertical = 0;
             horizontal = 0;
         }
-        return new Vector3(forward, vertical, horizontal);
+        return new Vector3(forward, vertical, -horizontal);
+    }
+
+    public void LeaveSpawn() {
+        tag = "Untagged";
+        GameObject.FindGameObjectWithTag("spawner").GetComponent<ISpawner>().Spawn();
+        GetComponent<ThrowableSensor>().enabled = true;
+        this.enabled = false;
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        thrown = false;
+        canThrow = true;
     }
 }

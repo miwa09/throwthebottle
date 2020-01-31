@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NormalMode : MonoBehaviour
 {
@@ -12,8 +13,17 @@ public class NormalMode : MonoBehaviour
     public int score = 0;
     public int scorePerHit = 1000;
     bool perfect = false;
+    public Text scoreUI;
+    public Text multiplierUI;
+    public float scoreUpdateTick= 0.01f;
+    public int scoreToUpdatePerTick = 5;
+    float timer = 0;
+    int scoreToApply;
 
     private void Update() {
+        ApplyScore();
+        scoreUI.text = "" + score;
+        multiplierUI.text = "" + scoreMultiplier + "x";
         if (hits >= hitsToWin) {
             End();
         }
@@ -27,12 +37,28 @@ public class NormalMode : MonoBehaviour
     }
 
     public void Score() {
-        score += Mathf.RoundToInt(scorePerHit * scoreMultiplier);
+        scoreToApply += Mathf.RoundToInt(scorePerHit * scoreMultiplier);
         hits++;
     }
 
     public void AddScore(int addscore) {
-        score += addscore;
+        scoreToApply += addscore;
+    }
+
+    void ApplyScore() {
+        if (scoreToApply > 0) {
+            timer += Time.deltaTime;
+            while (timer >= scoreUpdateTick) {
+                timer -= scoreUpdateTick;
+                if (scoreToApply - 5 < 0) {
+                    score += scoreToApply;
+                    scoreToApply = 0;
+                } else {
+                    score += 5;
+                    scoreToApply -= 5;
+                }
+            }
+        }
     }
 
     public void Miss() {

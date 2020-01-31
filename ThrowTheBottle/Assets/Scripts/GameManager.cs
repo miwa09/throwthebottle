@@ -15,7 +15,9 @@ public class GameManager : MonoBehaviour
     public bool chaos = false;
 
     void Update() {
-        Clock();
+        if (!chaos) {
+            Clock();
+        }
     }
 
     void Clock() {
