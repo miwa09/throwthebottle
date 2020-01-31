@@ -7,6 +7,8 @@ public class BallSpawner : MonoBehaviour, ISpawner
     public GameObject prefab;
 
     public void Spawn() {
-        Instantiate(prefab, transform.position, transform.rotation);
+        if (GameObject.FindGameObjectsWithTag("throwable").Length < 1) {
+            Instantiate(prefab, transform.position, transform.rotation);
+        }
     }
 }

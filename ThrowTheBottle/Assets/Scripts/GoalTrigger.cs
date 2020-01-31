@@ -12,7 +12,7 @@ public class GoalTrigger : MonoBehaviour
         }
     }
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "throwable") { //Voit myös käyttää other.CompareTag("throwable"), tekee saman asian hieman siistimmin
+        if (other.gameObject.layer == LayerMask.NameToLayer("Throwable")) {
             GameObject.FindGameObjectWithTag("GameLogic").GetComponent<NormalMode>().Score();
             other.GetComponent<ThrowableSensor>().enabled = false;
         }
