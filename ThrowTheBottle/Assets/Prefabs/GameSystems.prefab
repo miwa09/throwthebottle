@@ -129,7 +129,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390006904325026545}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1062,6 +1062,7 @@ MonoBehaviour:
   - {fileID: 756818698606958554}
   - {fileID: 756818698670870833}
   confirmationPopup: {fileID: 756818698897468231}
+  highscoreString: 
 --- !u!114 &756818698214430716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1080,6 +1081,7 @@ MonoBehaviour:
   minutes: 0
   chaosTimelimit: 60
   chaos: 0
+  ended: 0
   score: {fileID: 8546263434570900678}
   timeTaken: {fileID: 6547714524586007814}
   misses: {fileID: 9172355901413182218}
@@ -1140,6 +1142,7 @@ MonoBehaviour:
   distanceScoreMultiplier: 5
   scoreUI: {fileID: 5161186658604388241}
   spawner: {fileID: 0}
+  throws: 0
 --- !u!1 &756818698335446426
 GameObject:
   m_ObjectHideFlags: 0
@@ -2481,7 +2484,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122099518866792722}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -2558,7 +2561,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2203792479558411300}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -3352,7 +3355,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4168268822708046498}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

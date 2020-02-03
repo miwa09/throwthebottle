@@ -29,9 +29,9 @@ public class BetterThrow : MonoBehaviour
     void Update()
     {
         if (!ended) {
-            //if (Input.GetKeyDown(KeyCode.Space)) {
-            //    LeaveSpawn();
-            //}
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                LeaveSpawn();
+            }
             if (canThrow && !thrown) {
                 DragAlong();
             }
@@ -96,7 +96,7 @@ public class BetterThrow : MonoBehaviour
     }
 
     public void LeaveSpawn() {
-        tag = "Untagged";
+        tag = "thrown";
         if (!ended) {
             GameObject.FindGameObjectWithTag("spawner").GetComponent<ISpawner>().Spawn();
         }

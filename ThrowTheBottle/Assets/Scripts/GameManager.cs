@@ -24,6 +24,12 @@ public class GameManager : MonoBehaviour
     NormalMode nm;
     ChaosMode cm;
 
+    private void Awake() {
+        if (GameObject.FindGameObjectWithTag("PData").GetComponent<ModeSelector>().chaos){
+            chaos = true;
+        }
+    }
+
     private void Start() {
         nm = GetComponent<NormalMode>();
         cm = GetComponent<ChaosMode>();
