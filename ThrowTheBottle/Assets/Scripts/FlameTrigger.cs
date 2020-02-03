@@ -34,6 +34,7 @@ public class FlameTrigger : MonoBehaviour
 
     void SetExplosionState() {
         if (!explosion.activeSelf) {
+            GameObject.Find("GameSystems").GetComponent<AudioSource>().Play();
             explosion.SetActive(true);
         }
         else {
