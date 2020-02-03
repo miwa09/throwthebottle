@@ -5,15 +5,33 @@ using UnityEngine;
 public class FlameTrigger : MonoBehaviour
 {
     public GameObject explosion;
+    public float explosionRadius = 2f;
     public float explosionTime = 0.5f;
 
     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.tag == "throwable") {
+        if (other.gameObject.tag == "thrown") {
             SetExplosionState();
             Invoke("SetExplosionState", explosionTime);
             Destroy(other.gameObject);
+            if (GetComponent<ScoreObject>() != null) {
+                GetComponent<ScoreObject>().DestroyObj();
+            }
         }
     }
+
+    //private void OnCollisionEnter(Collision collision) {
+    //    if (collision.gameObject.layer == LayerMask.NameToLayer("Default")) {
+    //        Collider[] objsToDestroy = Physics.OverlapSphere(transform.position, explosionRadius);
+    //        foreach (Collider obj in objsToDestroy) {
+    //            if (obj.CompareTag("destroyable") && obj.GetComponent<IDestroyable>() != null) {
+    //                obj.GetComponent<IDestroyable>().DestroyObj();
+    //            }
+    //            SetExplosionState();
+    //            Invoke("SetExplosionState", explosionTime);
+    //            Destroy(gameObject);
+    //        }
+    //    }
+    //}
 
     void SetExplosionState() {
         if (!explosion.activeSelf) {

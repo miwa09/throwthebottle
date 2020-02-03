@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &42658404
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -244,7 +244,7 @@ PrefabInstance:
     - target: {fileID: 3999840334728002374, guid: a07f1b6c5596a084dbee1a4e3c1f2063,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3999840334728002425, guid: a07f1b6c5596a084dbee1a4e3c1f2063,
         type: 3}
@@ -1042,7 +1042,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1229998973
 Light:
   m_ObjectHideFlags: 0
@@ -1312,7 +1312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1610148938
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1621,7 +1621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1971560389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1801,7 +1801,7 @@ PrefabInstance:
     - target: {fileID: 756818698214430719, guid: 9e1f407169ee78649acbf02afa463d00,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 756818698670870833, guid: 9e1f407169ee78649acbf02afa463d00,
         type: 3}
@@ -2004,7 +2004,7 @@ PrefabInstance:
     - target: {fileID: 3048652907272594715, guid: 36e40b1e4f40a834380aefb4f5de2d13,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36e40b1e4f40a834380aefb4f5de2d13, type: 3}
@@ -2023,7 +2023,7 @@ PrefabInstance:
     - target: {fileID: 4084981979627348542, guid: 8ccb9bc9129672e48bcb01c923315707,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8132391433597810580, guid: 8ccb9bc9129672e48bcb01c923315707,
         type: 3}

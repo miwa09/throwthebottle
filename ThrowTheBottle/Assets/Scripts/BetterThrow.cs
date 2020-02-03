@@ -96,7 +96,7 @@ public class BetterThrow : MonoBehaviour
     }
 
     public void LeaveSpawn() {
-        tag = "Untagged";
+        tag = "thrown";
         if (!ended) {
             GameObject.FindGameObjectWithTag("spawner").GetComponent<ISpawner>().Spawn();
         }
