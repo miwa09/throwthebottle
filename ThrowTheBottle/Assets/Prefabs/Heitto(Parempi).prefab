@@ -134,7 +134,6 @@ MonoBehaviour:
   verticalMax: 6
   horizontalMax: 5
   thrown: 0
-  testUI: {fileID: 0}
 --- !u!114 &1909839577000411096
 MonoBehaviour:
   m_ObjectHideFlags: 0
