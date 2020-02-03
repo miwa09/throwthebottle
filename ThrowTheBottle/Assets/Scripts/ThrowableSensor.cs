@@ -35,7 +35,9 @@ public class ThrowableSensor : MonoBehaviour
             }
             if (gm.chaos) {
                 GameObject.FindGameObjectWithTag("GameLogic").GetComponent<ChaosMode>().AddScoreThrow(transform.position);
-                this.enabled = false;
+                if (!exploding) {
+                    this.enabled = false;
+                }
                 return;
             }
             if (explodeOnTimer) {
