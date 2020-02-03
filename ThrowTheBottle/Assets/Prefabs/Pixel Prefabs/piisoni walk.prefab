@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4316544737299387567}
   - component: {fileID: 4316544737299388241}
-  - component: {fileID: 4316544737299388240}
   m_Layer: 0
   m_Name: piisoni walk
-  m_TagString: Untagged
+  m_TagString: destroyable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,21 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 100
   destroyThrowable: 0
---- !u!114 &4316544737299388240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4316544737299387566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 207d5c0162a980048b8437e7ccb2a773, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 527291138756738356}
-  explosionRadius: 2
-  explosionTime: 0.5
 --- !u!1 &4316544738252121899
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,6 +60,7 @@ GameObject:
   - component: {fileID: 4316544738252122064}
   - component: {fileID: 4316544738252121903}
   - component: {fileID: 4316544738252121902}
+  - component: {fileID: 4921385658576110526}
   m_Layer: 0
   m_Name: walking
   m_TagString: Untagged
@@ -141,7 +126,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1e8f6b9002581eb47a0715ace4fdb293, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.16
   m_Pitch: 1
   Loop: 0
@@ -234,11 +219,26 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4316544738252121899}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4921385658576110526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4316544738252121899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207d5c0162a980048b8437e7ccb2a773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 527291138756738356}
+  explosionRadius: 2
+  explosionTime: 0.5
 --- !u!1 &4316544738772844655
 GameObject:
   m_ObjectHideFlags: 0
