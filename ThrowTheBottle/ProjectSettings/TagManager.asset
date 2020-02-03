@@ -9,6 +9,7 @@ TagManager:
   - spawner
   - PData
   - GameLogic
+  - destroyable
   layers:
   - Default
   - TransparentFX
