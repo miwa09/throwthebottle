@@ -11,7 +11,6 @@ public class FlameTrigger : MonoBehaviour
         if(other.gameObject.tag == "throwable") {
             SetExplosionState();
             Invoke("SetExplosionState", explosionTime);
-            Destroy(other.gameObject);
         }
     }
 
