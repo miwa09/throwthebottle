@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4316544737299387567}
-  - component: {fileID: 4316544737299388241}
   m_Layer: 0
   m_Name: piisoni walk
   m_TagString: destroyable
@@ -33,20 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4316544737299388241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4316544737299387566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 555f462b46da038478a5f967ae6908ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 100
-  destroyThrowable: 0
 --- !u!1 &4316544738252121899
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +46,7 @@ GameObject:
   - component: {fileID: 4316544738252121903}
   - component: {fileID: 4316544738252121902}
   - component: {fileID: 4921385658576110526}
+  - component: {fileID: 493967983}
   m_Layer: 0
   m_Name: walking
   m_TagString: Untagged
@@ -237,8 +223,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 527291138756738356}
-  explosionRadius: 2
   explosionTime: 0.5
+--- !u!114 &493967983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4316544738252121899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555f462b46da038478a5f967ae6908ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 100
+  destroyThrowable: 1
 --- !u!1 &4316544738772844655
 GameObject:
   m_ObjectHideFlags: 0

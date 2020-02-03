@@ -151,6 +151,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   spawnLocation: {x: 0, y: 0, z: 0}
+  explodeOnTimer: 1
+  explodeTimer: 0.5
 --- !u!1 &8896429537554541324
 GameObject:
   m_ObjectHideFlags: 0

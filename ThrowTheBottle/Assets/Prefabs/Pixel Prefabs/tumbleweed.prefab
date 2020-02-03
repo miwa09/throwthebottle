@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6263041089409857174}
   - component: {fileID: -6636839485132671666}
   - component: {fileID: -1046238084548799460}
+  - component: {fileID: 419808270}
   m_Layer: 0
   m_Name: tumbleweed
   m_TagString: WindAffected
@@ -111,11 +112,11 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6263041089409857171}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.635
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.4400918
+  m_Center: {x: 0, y: 0, z: -0.80509186}
 --- !u!114 &6263041089409857174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff58c5668840f64f89499bce1bdf6f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyTime: 50
+  destroyTime: 20
 --- !u!114 &-6636839485132671666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555f462b46da038478a5f967ae6908ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 100
+  score: 80
   destroyThrowable: 0
 --- !u!114 &-1046238084548799460
 MonoBehaviour:
@@ -156,8 +157,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 4374722495892842558}
-  explosionRadius: 0.1
   explosionTime: 0.3
+--- !u!135 &419808270
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6263041089409857171}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.63499993
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &534105675
 PrefabInstance:
   m_ObjectHideFlags: 0

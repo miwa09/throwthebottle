@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: ab87e2f0f290da744b022325439ab6c0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lauran audiovisuaali.unity
     guid: 2ce6b4c9f182755428d2c927e01cd6ec
   - enabled: 0
