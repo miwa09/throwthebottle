@@ -25,7 +25,7 @@ public class FlameTrigger : MonoBehaviour
                 }
                 SetExplosionState();
                 Invoke("SetExplosionState", explosionTime);
-                Destroy(collision.gameObject);
+                Destroy(gameObject);
             }
         }
     }

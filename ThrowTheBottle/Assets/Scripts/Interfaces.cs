@@ -7,5 +7,5 @@ public interface ISpawner {
 }
 
 public interface IDestroyable {
-    void DestroyObj(int score);
+    void DestroyObj();
 }
