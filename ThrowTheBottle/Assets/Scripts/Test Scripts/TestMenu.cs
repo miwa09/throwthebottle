@@ -11,6 +11,7 @@ public class TestMenu : MonoBehaviour
     public Button menuButton;
     public Button[] popupDisableList;
     public GameObject confirmationPopup;
+    public string highscoreString;
 
     private void Start() {
         if (menuObj != null) {
@@ -64,11 +65,29 @@ public class TestMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void SaveHighscore(int score, string name) {
+        GameObject.FindObjectOfType<HighscoreTable>().AddHighscoreEntry(score, name, highscoreString);
+    }
+
+    public void PopupHighscore(GameObject obj) {
+        obj.SetActive(true);
+    }
+
+    public void ReturnHighscore(GameObject obj) {
+        obj.SetActive(false);
+    }
+
     public void Exit() {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
         Application.Quit();
 
+    }
+
+    [System.Serializable]
+    private class HighscoreEntry {
+        public int score;
+        public string name;
     }
 }
