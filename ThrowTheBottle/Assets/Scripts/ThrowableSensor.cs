@@ -6,6 +6,7 @@ public class ThrowableSensor : MonoBehaviour
 {
     public LayerMask mask;
     GameManager gm;
+    public Vector3 spawnLocation;
 
     private void OnEnable() {
         gm = GameObject.FindGameObjectWithTag("GameLogic").GetComponent<GameManager>();
@@ -15,6 +16,10 @@ public class ThrowableSensor : MonoBehaviour
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Default") && this.enabled) {
             if (!gm.chaos) {
                 gm.gameObject.GetComponent<NormalMode>().Miss();
+                this.enabled = false;
+            }
+            if (gm.chaos) {
+                GameObject.FindGameObjectWithTag("GameLogic").GetComponent<ChaosMode>().AddScoreThrow(transform.position);
                 this.enabled = false;
             }
         }

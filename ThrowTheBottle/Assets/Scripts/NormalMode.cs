@@ -5,44 +5,83 @@ using UnityEngine.UI;
 
 public class NormalMode : MonoBehaviour
 {
-    public float parTime; //in seconds
-    int misses = 0;
+    GameManager gm;
+    public int misses = 0;
     int hits = 0;
     public int hitsToWin = 5;
-    float scoreMultiplier = 2;
+    public float[] scoreMultipliers;
+    int multiplierIndex = 0;
     public int score = 0;
     public int scorePerHit = 1000;
     bool perfect = false;
     public Text scoreUI;
     public Text multiplierUI;
     public float scoreUpdateTick= 0.01f;
-    public int scoreToUpdatePerTick = 5;
     float timer = 0;
-    int scoreToApply;
+    public int scoreToApply;
+    int failsafe = 1;
+    public Image[] failsafeUI;
+    [Tooltip("Par time for the stage in seconds")]
+    public int parTime;
+    public float parTimeScore = 1000;
+    float scoreTime;
+    bool doOnce = true;
+
+    private void Start() {
+        gm = GetComponent<GameManager>();
+        scoreUI.enabled = true;
+        multiplierUI.enabled = true;
+        foreach (Image obj in failsafeUI) {
+            obj.gameObject.SetActive(true);
+        }
+    }
 
     private void Update() {
         ApplyScore();
+        FailsafeUIUpdate();
         scoreUI.text = "" + score;
-        multiplierUI.text = "" + scoreMultiplier + "x";
+        multiplierUI.text = "" + scoreMultipliers[multiplierIndex] + "x";
         if (hits >= hitsToWin) {
             End();
         }
     }
 
-    void End() {
-        if (misses == 0) {
-            perfect = true;
+    public void End() {
+        if (doOnce) {
+            if (misses == 0) {
+                perfect = true;
+            }
+            float parTimeF = parTime; //turning already exisisting integer values to floats to make the calculations below work and as to not lose my mind
+            float minutesF = gm.minutes;
+            float secondsF = gm.seconds;
+            scoreTime = parTimeF / (minutesF * 60 + secondsF) * parTimeScore;
+            scoreTime = Mathf.Clamp(scoreTime, parTimeScore / 2, parTimeScore * 2);
+            if (scoreTime <= parTimeScore / 2) {
+                scoreTime = 0;
+            }
+            gm.Invoke("LevelComplete", 0.5f);
+            if (scoreToApply > 0) {
+                score += scoreToApply;
+                scoreToApply = 0;
+            }
+            Invoke("AddTimeScore", 1);
+            doOnce = false;
         }
-        GetComponent<GameManager>().Invoke("LevelComplete", 0.5f);
     }
 
     public void Score() {
-        scoreToApply += Mathf.RoundToInt(scorePerHit * scoreMultiplier);
+        scoreToApply += Mathf.RoundToInt(scorePerHit * scoreMultipliers[multiplierIndex]);
         hits++;
     }
 
     public void AddScore(int addscore) {
         scoreToApply += addscore;
+    }
+
+    void AddTimeScore() {
+        scoreToApply = 0;
+        scoreToApply += Mathf.RoundToInt(scoreTime);
+        doOnce = false;
     }
 
     void ApplyScore() {
@@ -63,35 +102,30 @@ public class NormalMode : MonoBehaviour
 
     public void Miss() {
         misses++;
-        if (misses == 1) {
-            scoreMultiplier = 1.5f;
+        failsafe--;
+        if (failsafe <= 0) {
+            failsafe = 3;
+            if (multiplierIndex < scoreMultipliers.Length) {
+                multiplierIndex++;
+            }
         }
-        if (misses == 2) {
-            scoreMultiplier = 1.3f;
+    }
+
+    void FailsafeUIUpdate() {
+        if (failsafe == 1) {
+            failsafeUI[0].enabled = true;
+            failsafeUI[1].enabled = true;
+            return;
         }
-        if (misses == 3) {
-            scoreMultiplier = 1.2f;
+        if (failsafe == 2) {
+            failsafeUI[0].enabled = true;
+            failsafeUI[1].enabled = false;
+            return;
         }
-        if (misses == 4) {
-            scoreMultiplier = 1.1f;
-        }
-        if (misses == 5) {
-            scoreMultiplier = 1f;
-        }
-        if (misses == 6) {
-            scoreMultiplier = 0.9f;
-        }
-        if (misses == 7) {
-            scoreMultiplier = 0.8f;
-        }
-        if (misses == 8) {
-            scoreMultiplier = 0.7f;
-        }
-        if (misses == 9) {
-            scoreMultiplier = 0.6f;
-        }
-        if (misses >= 10) {
-            scoreMultiplier = 0.5f;
+        if (failsafe == 3) {
+            failsafeUI[0].enabled = false;
+            failsafeUI[1].enabled = false;
+            return;
         }
     }
 }

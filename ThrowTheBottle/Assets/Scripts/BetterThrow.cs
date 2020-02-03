@@ -21,21 +21,24 @@ public class BetterThrow : MonoBehaviour
     public bool thrown = false;
     Vector3 lastPosition;
     bool canThrow = false;
+    public bool ended = false;
 
     private void Start() {
         rig = GetComponent<Rigidbody>();
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            LeaveSpawn();
-        }
-        if (canThrow && !thrown) {
-            DragAlong();
-        }
-        if (Input.touchCount > 0 && canThrow && !thrown) {
-            touchDelta.Add(Input.touches[0].deltaPosition);
-            framesCounted++;
+        if (!ended) {
+            //if (Input.GetKeyDown(KeyCode.Space)) {
+            //    LeaveSpawn();
+            //}
+            if (canThrow && !thrown) {
+                DragAlong();
+            }
+            if (Input.touchCount > 0 && canThrow && !thrown) {
+                touchDelta.Add(Input.touches[0].deltaPosition);
+                framesCounted++;
+            }
         }
     }
 
@@ -94,13 +97,20 @@ public class BetterThrow : MonoBehaviour
 
     public void LeaveSpawn() {
         tag = "Untagged";
-        GameObject.FindGameObjectWithTag("spawner").GetComponent<ISpawner>().Spawn();
+        if (!ended) {
+            GameObject.FindGameObjectWithTag("spawner").GetComponent<ISpawner>().Spawn();
+        }
+        if (GameObject.FindGameObjectWithTag("GameLogic").GetComponent<GameManager>().chaos) {
+            GameObject.FindGameObjectWithTag("GameLogic").GetComponent<ChaosMode>().throws++;
+        }
         GetComponent<ThrowableSensor>().enabled = true;
         this.enabled = false;
     }
 
     private void OnCollisionEnter(Collision collision) {
-        thrown = false;
-        canThrow = true;
+        if (!ended && this.enabled) {
+            thrown = false;
+            canThrow = true;
+        }
     }
 }
