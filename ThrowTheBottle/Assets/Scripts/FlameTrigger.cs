@@ -13,7 +13,7 @@ public class FlameTrigger : MonoBehaviour
             Invoke("SetExplosionState", explosionTime);
             Destroy(other.gameObject);
             if (GetComponent<ScoreObject>() != null) {
-                GetComponent<ScoreObject>().DestroyObj();
+                GetComponent<ScoreObject>().Invoke("DestroyObj", explosionTime);
             }
         }
     }
