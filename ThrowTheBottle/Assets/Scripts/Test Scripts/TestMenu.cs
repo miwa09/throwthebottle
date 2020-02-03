@@ -77,6 +77,14 @@ public class TestMenu : MonoBehaviour
         obj.SetActive(false);
     }
 
+    public void ChaosMode() {
+        GameObject.FindGameObjectWithTag("PData").GetComponent<ModeSelector>().ChaosMode();
+    }
+
+    public void NormalMode() {
+        GameObject.FindGameObjectWithTag("PData").GetComponent<ModeSelector>().NormalMode();
+    }
+
     public void Exit() {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
