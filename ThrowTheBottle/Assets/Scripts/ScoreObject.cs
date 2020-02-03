@@ -7,6 +7,7 @@ public class ScoreObject : MonoBehaviour
     bool chaos = false;
     public int score = 100;
     GameManager gm;
+    public bool destroyThrowable = false;
 
     void Start()
     {
@@ -19,6 +20,9 @@ public class ScoreObject : MonoBehaviour
                 gm.GetComponent<NormalMode>().AddScore(score);
             } else gm.GetComponent<ChaosMode>().AddScore(score);
             Destroy(gameObject);
+            if (destroyThrowable) {
+                Destroy(collision.gameObject);
+            }
         }
     }
 }
