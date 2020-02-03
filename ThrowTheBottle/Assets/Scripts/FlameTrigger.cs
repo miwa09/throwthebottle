@@ -5,7 +5,6 @@ using UnityEngine;
 public class FlameTrigger : MonoBehaviour
 {
     public GameObject explosion;
-    public float explosionRadius = 2f;
     public float explosionTime = 0.5f;
 
     private void OnTriggerEnter(Collider other) {

@@ -29,9 +29,9 @@ public class BetterThrow : MonoBehaviour
     void Update()
     {
         if (!ended) {
-            //if (Input.GetKeyDown(KeyCode.Space)) {
-            //    LeaveSpawn();
-            //}
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                LeaveSpawn();
+            }
             if (canThrow && !thrown) {
                 DragAlong();
             }
