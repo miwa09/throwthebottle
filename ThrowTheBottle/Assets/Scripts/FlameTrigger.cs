@@ -9,7 +9,7 @@ public class FlameTrigger : MonoBehaviour
     public float explosionTime = 0.5f;
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "throwable") {
+        if (other.gameObject.tag == "thrown") {
             SetExplosionState();
             Invoke("SetExplosionState", explosionTime);
             Destroy(other.gameObject);
