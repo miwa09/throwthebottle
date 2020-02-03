@@ -260,6 +260,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: piisoni walk (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4316544737299387566, guid: 5f0cc6d1beedc2d4f8f5e1b5621843dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: destroyable
+      objectReference: {fileID: 0}
     - target: {fileID: 4316544737299387567, guid: 5f0cc6d1beedc2d4f8f5e1b5621843dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2040,6 +2045,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: piisoni walk (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4316544737299387566, guid: 5f0cc6d1beedc2d4f8f5e1b5621843dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: destroyable
+      objectReference: {fileID: 0}
     - target: {fileID: 4316544737299387567, guid: 5f0cc6d1beedc2d4f8f5e1b5621843dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3552,6 +3562,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: piisoni walk (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4316544737299387566, guid: 5f0cc6d1beedc2d4f8f5e1b5621843dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: destroyable
+      objectReference: {fileID: 0}
     - target: {fileID: 4316544737299387567, guid: 5f0cc6d1beedc2d4f8f5e1b5621843dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4508,6 +4523,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: piisoni walk (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4316544737299387566, guid: 5f0cc6d1beedc2d4f8f5e1b5621843dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: destroyable
+      objectReference: {fileID: 0}
     - target: {fileID: 4316544737299387567, guid: 5f0cc6d1beedc2d4f8f5e1b5621843dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4581,6 +4601,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: piisoni walk (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4316544737299387566, guid: 5f0cc6d1beedc2d4f8f5e1b5621843dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: destroyable
       objectReference: {fileID: 0}
     - target: {fileID: 4316544737299387567, guid: 5f0cc6d1beedc2d4f8f5e1b5621843dc,
         type: 3}
@@ -5056,6 +5081,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: piisoni walk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4316544737299387566, guid: 5f0cc6d1beedc2d4f8f5e1b5621843dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: destroyable
       objectReference: {fileID: 0}
     - target: {fileID: 4316544737299387567, guid: 5f0cc6d1beedc2d4f8f5e1b5621843dc,
         type: 3}
