@@ -4101,6 +4101,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1287283237797785349, guid: 9e1f407169ee78649acbf02afa463d00,
+        type: 3}
+      propertyPath: highscoreString
+      value: highscore1
+      objectReference: {fileID: 0}
     - target: {fileID: 3989312086926415394, guid: 9e1f407169ee78649acbf02afa463d00,
         type: 3}
       propertyPath: m_AnchorMin.y

@@ -3580,6 +3580,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2648555103500165609, guid: 9e1f407169ee78649acbf02afa463d00,
+        type: 3}
+      propertyPath: highscoreString
+      value: highscore3
+      objectReference: {fileID: 0}
     - target: {fileID: 3989312086926415394, guid: 9e1f407169ee78649acbf02afa463d00,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -3629,6 +3634,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.8962264
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573735937421526748, guid: 9e1f407169ee78649acbf02afa463d00,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 8393919703441921711, guid: 9e1f407169ee78649acbf02afa463d00,
         type: 3}
