@@ -1081,7 +1081,7 @@ MonoBehaviour:
   timerUI: {fileID: 756818699284126706}
   seconds: 0
   minutes: 0
-  chaosTimelimit: 60
+  chaosTimelimit: 30
   chaos: 0
   ended: 0
   score: {fileID: 8546263434570900678}
