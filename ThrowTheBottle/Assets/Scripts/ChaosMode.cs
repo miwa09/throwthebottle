@@ -17,11 +17,15 @@ public class ChaosMode : MonoBehaviour
     GameManager gm;
     List<ThrowableSensor> thrownObjects = new List<ThrowableSensor>();
     public int throws = 0;
+    public GameObject[] cullList;
     void Start()
     {
         gm = GetComponent<GameManager>();
         scoreUI.enabled = true;
-        spawnLocation = spawner.position;
+        spawnLocation = GameObject.FindGameObjectWithTag("spawner").transform.position;
+        foreach(GameObject obj in cullList) {
+            obj.SetActive(false);
+        }
     }
 
     void Update()

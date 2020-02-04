@@ -13,6 +13,7 @@ public class HighscoreTable : MonoBehaviour {
     public string highscoreString;
     public int amountToCreate = 20;
     private void Awake() {
+        //InstantiateLists();
         if (!recording) {
             entryContainer = transform.Find("highscoreEntryContainer");
             entryTemplate = entryContainer.Find("highscoreEntryTemplate");
@@ -50,6 +51,23 @@ public class HighscoreTable : MonoBehaviour {
                 //}
             }
         }
+    }
+
+    void InstantiateLists() {
+        highscoreEntryList = new List<HighscoreEntry>() {
+            new HighscoreEntry{ score = 9139, name = "1ST" },
+            new HighscoreEntry{ score = 8777, name = "2ND" },
+            new HighscoreEntry{ score = 8602, name = "TIM" },
+            new HighscoreEntry{ score = 7503, name = "ING" },
+            new HighscoreEntry{ score = 7442, name = "MRY" },
+            new HighscoreEntry{ score = 6606, name = "ELV" },
+            new HighscoreEntry{ score = 6123, name = "SAM" },
+        };
+
+        Highscores highscores = new Highscores { highscoreEntryList = highscoreEntryList };
+        string json = JsonUtility.ToJson(highscores);
+        PlayerPrefs.SetString("highscore3Chaos", json);
+        PlayerPrefs.Save();
     }
 
     void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry, Transform container, List<Transform> transformList) {
@@ -96,7 +114,6 @@ public class HighscoreTable : MonoBehaviour {
         PlayerPrefs.Save();
     }
 
-    [System.Serializable]
     private class Highscores {
         public List<HighscoreEntry> highscoreEntryList;
     }

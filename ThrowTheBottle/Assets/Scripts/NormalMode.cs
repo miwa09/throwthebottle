@@ -26,11 +26,13 @@ public class NormalMode : MonoBehaviour
     public float parTimeScore = 1000;
     float scoreTime;
     bool doOnce = true;
+    public Text hitsNeededUI;
 
     private void Start() {
         gm = GetComponent<GameManager>();
         scoreUI.enabled = true;
         multiplierUI.enabled = true;
+        hitsNeededUI.enabled = true;
         foreach (Image obj in failsafeUI) {
             obj.gameObject.SetActive(true);
         }
@@ -39,6 +41,7 @@ public class NormalMode : MonoBehaviour
     private void Update() {
         ApplyScore();
         FailsafeUIUpdate();
+        hitsNeededUI.text = "" + (hitsToWin - hits);
         scoreUI.text = "" + score;
         multiplierUI.text = "" + scoreMultipliers[multiplierIndex] + "x";
         if (hits >= hitsToWin) {
