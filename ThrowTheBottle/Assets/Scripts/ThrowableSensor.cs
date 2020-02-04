@@ -30,7 +30,9 @@ public class ThrowableSensor : MonoBehaviour
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Default") && this.enabled) {
             if (!gm.chaos) {
                 gm.gameObject.GetComponent<NormalMode>().Miss();
-                this.enabled = false;
+                if (!explodeOnTimer) {
+                    this.enabled = false;
+                }
                 return;
             }
             if (gm.chaos) {
