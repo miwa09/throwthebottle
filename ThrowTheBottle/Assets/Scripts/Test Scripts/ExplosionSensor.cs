@@ -9,7 +9,7 @@ public class ExplosionSensor : MonoBehaviour
     public GameObject explosionTrigger;
 
     private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("throwable")) {
+        if (other.CompareTag("thrown")) {
             print("hit");
             if (other.GetComponent<Rigidbody>().velocity.magnitude > requiredVelocity) {
                 foreach (Collider obj in colliders) {

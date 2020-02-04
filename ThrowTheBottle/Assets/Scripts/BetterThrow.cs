@@ -104,6 +104,9 @@ public class BetterThrow : MonoBehaviour
             GameObject.FindGameObjectWithTag("GameLogic").GetComponent<ChaosMode>().throws++;
         }
         GetComponent<ThrowableSensor>().enabled = true;
+        if (GetComponent<SecretDeleter>() != null) {
+            GetComponent<SecretDeleter>().isEnabled = true;
+        }
         this.enabled = false;
     }
 

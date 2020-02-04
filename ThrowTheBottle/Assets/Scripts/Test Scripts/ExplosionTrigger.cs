@@ -8,7 +8,7 @@ public class ExplosionTrigger : MonoBehaviour
     public float explosionRadius;
     public Rigidbody[] affectedRigs;
     private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("throwable")) {
+        if (other.CompareTag("thrown")) {
             foreach (Rigidbody rb in affectedRigs) {
                 rb.isKinematic = false;
                 rb.AddExplosionForce(explosionForce, other.transform.position, explosionRadius);

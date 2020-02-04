@@ -13,6 +13,9 @@ public class HighscoreTable : MonoBehaviour {
     public string highscoreString;
     public int amountToCreate = 20;
     private void Awake() {
+        if (PlayerPrefs.GetInt("needLists") != 1) {
+            InstantiateLists();
+        }
         if (!recording) {
             entryContainer = transform.Find("highscoreEntryContainer");
             entryTemplate = entryContainer.Find("highscoreEntryTemplate");
@@ -50,6 +53,99 @@ public class HighscoreTable : MonoBehaviour {
                 //}
             }
         }
+    }
+
+    void InstantiateLists() {
+        InstantiateLists1();
+        InstantiateLists1C();
+        InstantiateLists2();
+        InstantiateLists2C();
+        InstantiateLists3();
+        InstantiateLists3C();
+        PlayerPrefs.SetInt("needLists", 1);
+        PlayerPrefs.Save();
+    }
+
+    void InstantiateLists1C() {
+        highscoreEntryList = new List<HighscoreEntry>() {
+            new HighscoreEntry{ score = 7351, name = "NAT" },
+            new HighscoreEntry{ score = 5563, name = "OSC" },
+            new HighscoreEntry{ score = 3248, name = "TIM" },
+        };
+
+        Highscores highscores = new Highscores { highscoreEntryList = highscoreEntryList };
+        string json = JsonUtility.ToJson(highscores);
+        PlayerPrefs.SetString("highscore1Chaos", json);
+        PlayerPrefs.Save();
+    }
+
+    void InstantiateLists1() {
+        highscoreEntryList = new List<HighscoreEntry>() {
+            new HighscoreEntry{ score = 6000, name = "DAN" },
+            new HighscoreEntry{ score = 3600, name = "OSC" },
+        };
+
+        Highscores highscores = new Highscores { highscoreEntryList = highscoreEntryList };
+        string json = JsonUtility.ToJson(highscores);
+        PlayerPrefs.SetString("highscore1", json);
+        PlayerPrefs.Save();
+    }
+
+    void InstantiateLists3C() {
+        highscoreEntryList = new List<HighscoreEntry>() {
+            new HighscoreEntry{ score = 9139, name = "1ST" },
+            new HighscoreEntry{ score = 8777, name = "2ND" },
+            new HighscoreEntry{ score = 8602, name = "TIM" },
+            new HighscoreEntry{ score = 7503, name = "ING" },
+            new HighscoreEntry{ score = 7442, name = "MRY" },
+            new HighscoreEntry{ score = 6606, name = "ELV" },
+            new HighscoreEntry{ score = 6123, name = "SAM" },
+        };
+
+        Highscores highscores = new Highscores { highscoreEntryList = highscoreEntryList };
+        string json = JsonUtility.ToJson(highscores);
+        PlayerPrefs.SetString("highscore3Chaos", json);
+        PlayerPrefs.Save();
+    }
+    void InstantiateLists3() {
+        highscoreEntryList = new List<HighscoreEntry>() {
+            new HighscoreEntry{ score = 7900, name = "SAM" },
+            new HighscoreEntry{ score = 6500, name = "ULY" },
+            new HighscoreEntry{ score = 5000, name = "NAT" },
+        };
+
+        Highscores highscores = new Highscores { highscoreEntryList = highscoreEntryList };
+        string json = JsonUtility.ToJson(highscores);
+        PlayerPrefs.SetString("highscore3", json);
+        PlayerPrefs.Save();
+    }
+
+    void InstantiateLists2() {
+        highscoreEntryList = new List<HighscoreEntry>() {
+            new HighscoreEntry{ score = 3000, name = "CHA" },
+            new HighscoreEntry{ score = 2200, name = "LIZ" },
+            new HighscoreEntry{ score = 1750, name = "IMP" },
+            new HighscoreEntry{ score = 1550, name = "CON" },
+            new HighscoreEntry{ score = 1000, name = "KAT" },
+
+        };
+
+        Highscores highscores = new Highscores { highscoreEntryList = highscoreEntryList };
+        string json = JsonUtility.ToJson(highscores);
+        PlayerPrefs.SetString("highscore2", json);
+        PlayerPrefs.Save();
+    }
+    void InstantiateLists2C() {
+        highscoreEntryList = new List<HighscoreEntry>() {
+            new HighscoreEntry{ score = 8352, name = "TIM" },
+            new HighscoreEntry{ score = 5336, name = "HAR" },
+            new HighscoreEntry{ score = 5293, name = "ELV" },
+        };
+
+        Highscores highscores = new Highscores { highscoreEntryList = highscoreEntryList };
+        string json = JsonUtility.ToJson(highscores);
+        PlayerPrefs.SetString("highscore2Chaos", json);
+        PlayerPrefs.Save();
     }
 
     void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry, Transform container, List<Transform> transformList) {
@@ -96,7 +192,6 @@ public class HighscoreTable : MonoBehaviour {
         PlayerPrefs.Save();
     }
 
-    [System.Serializable]
     private class Highscores {
         public List<HighscoreEntry> highscoreEntryList;
     }

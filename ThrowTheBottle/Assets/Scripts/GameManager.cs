@@ -23,8 +23,12 @@ public class GameManager : MonoBehaviour
     public GameObject menu;
     NormalMode nm;
     ChaosMode cm;
+    public GameObject PDataContainer;
 
     private void Awake() {
+        if (GameObject.FindGameObjectWithTag("PData") == null) {
+            Instantiate(PDataContainer);
+        }
         if (GameObject.FindGameObjectWithTag("PData").GetComponent<ModeSelector>().chaos){
             chaos = true;
         }
