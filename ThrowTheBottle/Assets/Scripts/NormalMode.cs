@@ -108,7 +108,7 @@ public class NormalMode : MonoBehaviour
         failsafe--;
         if (failsafe <= 0) {
             failsafe = 3;
-            if (multiplierIndex < scoreMultipliers.Length) {
+            if (multiplierIndex < scoreMultipliers.Length - 1) {
                 multiplierIndex++;
             }
         }
